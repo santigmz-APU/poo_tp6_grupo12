@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.poo.actividad1.model;
+package ar.edu.unju.fi.poo.actividad2.model;
 
 import java.time.LocalDate;
 

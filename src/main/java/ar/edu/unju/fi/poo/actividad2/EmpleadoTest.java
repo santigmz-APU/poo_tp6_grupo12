@@ -1,9 +1,9 @@
-package ar.edu.unju.fi.poo.actividad1;
+package ar.edu.unju.fi.poo.actividad2;
 
 import java.time.LocalDate;
 
-import ar.edu.unju.fi.poo.actividad1.model.Administrativo;
-import ar.edu.unju.fi.poo.actividad1.model.Profesional;
+import ar.edu.unju.fi.poo.actividad2.model.Administrativo;
+import ar.edu.unju.fi.poo.actividad2.model.Profesional;
 
 public class EmpleadoTest {
 
