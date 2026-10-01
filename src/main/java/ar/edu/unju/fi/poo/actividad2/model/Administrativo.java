@@ -42,4 +42,8 @@ public class Administrativo extends Empleado{
 	public void setCategoria(Character caracter) {
 		this.categoria = caracter;
 	}
+	
+	public char getCategoria() {
+		return categoria;
+	}
 }

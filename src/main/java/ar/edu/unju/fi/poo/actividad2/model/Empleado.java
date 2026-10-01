@@ -52,5 +52,9 @@ public abstract class Empleado {
 	public String getNombre() {
 		return nombre;
 	}
+	
+	public int getDocumento() {
+		return documento;
+	}
 }
 

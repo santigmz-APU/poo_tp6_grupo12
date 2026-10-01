@@ -28,4 +28,13 @@ public class ManagerEmpleado {
                                " | Sueldo Neto: $" + e.calcularSueldoNeto());
         }
     }
+    
+    public Empleado buscarPorLegajo(int legajo) {
+        for (Empleado e : empleados) {
+            if (e.getLegajo() == legajo) {
+                return e;
+            }
+        }
+        return null;
+    }
 }
