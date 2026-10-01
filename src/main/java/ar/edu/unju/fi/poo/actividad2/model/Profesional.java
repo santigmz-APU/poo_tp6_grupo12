@@ -14,8 +14,16 @@ public class Profesional extends Empleado {
 	
 	@Override
 	public double calcularSueldoNeto() {
-		// Calcular sueldito 
-		return 0;
+        double adicionalTitulos = this.titulos.size() * 30000.0;
+
+        double remunerativos = Empleado.sueldoBasico + adicionalTitulos + calcularAntiguedad();
+
+        double descuentos = remunerativos * 0.18;
+
+        double salarioFamiliar = calcularSalarioFamiliar();
+
+        //Sueldo Neto
+        return remunerativos + salarioFamiliar - descuentos;
 	}
 	
 	public void agregarTitulo(Titulo titulonuevo) {

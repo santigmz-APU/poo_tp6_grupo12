@@ -13,8 +13,30 @@ public class Administrativo extends Empleado{
 	
 	@Override
 	public double calcularSueldoNeto() {
-		// Calcular sueldito 
-		return 0;
+        double adicionalCategoria = 0.0;
+        switch (this.categoria) {
+            case 'A':
+                adicionalCategoria = 30000.0; // Auxiliar
+                break;
+            case 'B':
+                adicionalCategoria = 45000.0; // Ventas
+                break;
+            case 'C':
+                adicionalCategoria = 55000.0; // Gerencia
+                break;
+            default:
+                System.out.println("Categoría no válida. Se asume 0$ de adicional.");
+                break;
+        }
+
+        double remunerativos = Empleado.sueldoBasico + adicionalCategoria + calcularAntiguedad();
+
+        double descuentos = remunerativos * 0.18;
+
+        double salarioFamiliar = calcularSalarioFamiliar();
+
+        //Sueldo Neto
+        return remunerativos + salarioFamiliar - descuentos;
 	}
 	
 	public void setCategoria(Character caracter) {

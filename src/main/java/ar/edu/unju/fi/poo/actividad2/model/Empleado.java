@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.poo.actividad2.model;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public abstract class Empleado {
 	private int legajo;
@@ -8,7 +9,7 @@ public abstract class Empleado {
 	private String nombre;
 	private LocalDate fechaIngreso;
 	private int cantidadHijos;
-	private double sueldoBasico = 400000.0;
+	public static double sueldoBasico = 400000.0;
 	
 	public Empleado(int legajo, int documento, String nombre, LocalDate fechaIngreso, int cantidadHijos) {
 		super();
@@ -22,13 +23,13 @@ public abstract class Empleado {
 	public abstract double calcularSueldoNeto();
 	
 	public double calcularAntiguedad() {
-		double bonusAntiguedad = 0.0;
-		return bonusAntiguedad;
+		if (fechaIngreso == null) return 0.0;
+        int anios = Period.between(fechaIngreso, LocalDate.now()).getYears();
+        return anios * 6500.0;
 	}
 	
 	public double calcularSalarioFamiliar() {
-		double bonusFamiliar = 0.0;
-		return bonusFamiliar;
+		return cantidadHijos * 15000.0;
 	}
 	
 	public void mostrarSueldo() {
@@ -43,4 +44,13 @@ public abstract class Empleado {
 		System.out.println("Cantidad de Hijos: " + cantidadHijos);
 		System.out.println("Sueldo Neto " + calcularSueldoNeto());
 	}
+
+	public int getLegajo() {
+		return legajo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
 }
+
