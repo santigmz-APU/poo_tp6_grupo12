@@ -9,17 +9,11 @@ public class Limpieza extends Empleado{
 	}
 
 	@Override
-	public double calcularSueldoNeto() {
+	public double calcularAdicional() {
+		
 		double adicionalInsalubridad = 25000.0;
 
-        double remunerativos = Empleado.sueldoBasico + adicionalInsalubridad + calcularAntiguedad();
-
-        double descuentos = remunerativos * 0.18;
-
-        double salarioFamiliar = calcularSalarioFamiliar();
-
-        //Sueldo Neto
-        return remunerativos + salarioFamiliar - descuentos;
+        return adicionalInsalubridad;
 	}
 	
 }

@@ -12,7 +12,7 @@ public class Administrativo extends Empleado{
 	}
 	
 	@Override
-	public double calcularSueldoNeto() {
+	public double calcularAdicional() {
         double adicionalCategoria = 0.0;
         switch (this.categoria) {
             case 'A':
@@ -29,14 +29,7 @@ public class Administrativo extends Empleado{
                 break;
         }
 
-        double remunerativos = Empleado.sueldoBasico + adicionalCategoria + calcularAntiguedad();
-
-        double descuentos = remunerativos * 0.18;
-
-        double salarioFamiliar = calcularSalarioFamiliar();
-
-        //Sueldo Neto
-        return remunerativos + salarioFamiliar - descuentos;
+        return adicionalCategoria;
 	}
 	
 	public void setCategoria(Character caracter) {
